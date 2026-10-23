@@ -1,3 +1,4 @@
+ejercicio 9
 Complejidad: Es O(n) (lineal, o sea, va creciendo parejito).
 Si duplico n, Las comparaciones también se duplican, directo.
 Aunque a simple vista hay dos bucles anidados, el de adentro es engañoso jakssj. El bucle de la j siempre se ejecuta exactamente 3 veces, sin importar el tamaño de n.
