@@ -11,7 +11,7 @@ struct Node {
     Node(int val) : data(val), next(nullptr), prev(nullptr) {}
 };
 
-void InsertionSortByParity(int arr[], int n) {
+void InsertionSortByParity(int arr[], int n) { como
     for (int i = 1; i < n; ++i) {
         int key = arr[i];
         int j = i - 1;
@@ -28,20 +28,7 @@ void InsertionSortByParity(int arr[], int n) {
 }
 
 
-//ejercicio 1 :)
-void ReverseList(Node*& head) {
-    Node* current = head;
-    Node* temp = nullptr;
 
-    while (current != nullptr) {
-        temp = current->prev;
-        current->prev = current->next;
-        current->next = temp;
-
-        head = current;
-        current = current->prev;
-    }
-}
 
 void SwapAdjacentPairs(Node*& head) {
     if (head == nullptr || head->next == nullptr) {
