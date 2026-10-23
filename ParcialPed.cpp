@@ -11,6 +11,22 @@ struct Node {
     Node(int val) : data(val), next(nullptr), prev(nullptr) {}
 };
 
+void InsertionSortByParity(int arr[], int n) {
+    for (int i = 1; i < n; ++i) {
+        int key = arr[i];
+        int j = i - 1;
+
+        while (j >= 0 &&
+               ((arr[j] % 2 != 0 && key % 2 == 0) ||
+                ((arr[j] % 2 == 0) == (key % 2 == 0) && arr[j] > key))) {
+            arr[j + 1] = arr[j];
+            --j;
+        }
+
+        arr[j + 1] = key;
+    }
+}
+
 
 //ejercicio 1 :)
 void ReverseList(Node*& head) {
@@ -99,6 +115,17 @@ void SeparateRequests(
 }
 
 int main () {
+    int numeros[] = {8, 5, 2, 7, 4, 1, 6};
+    int cantidad = sizeof(numeros) / sizeof(numeros[0]);
+
+    InsertionSortByParity(numeros, cantidad);
+
+    std::cout << "Ordenado por paridad: ";
+    for (int i = 0; i < cantidad; ++i) {
+        std::cout << numeros[i] << " ";
+    }
+    std::cout << std::endl;
+
     std::stack<int> pila; //se crea una pila de enteros
     pila.push(5);
     pila.push(5);
